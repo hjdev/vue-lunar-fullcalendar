@@ -1,0 +1,291 @@
+<template>
+  <div class="calendar">
+      <!-- <div class="top">
+      <h2>解决vue-full-calendar这个插件增加中国农历。24节气和节假日的问题</h2>
+      <div>这个日程表是比较完善的jq插件，然后被封装成了vue插件，功能可以参照<a href="https://fullcalendar.io/docs" target="_blank">https://fullcalendar.io/docs</a> 这个链接的API文档和git的vue-full-calendar上去熟悉，在这里我就不讲细了，主要是在网上难以找到vue下面改造的农历问题，查了很多资料
+          ，然后结合网上一些改造jq插件增加农历的方法思路，修改了源码达到了效果! 把目录下的(hj_vue_demo/full-calendar-2018修改部分/components)替换(node_modules/vue-full-calendar/components)文件</div>
+      （功能实现了，至于样式，细节自行去调试优化）</div> -->
+      <div class="full-calendar"><full-calendar :events="events" ref="calendar" @event-selected="eventSelected" :config="config" 
+                 @day-click="dayClick"></full-calendar></div>
+    <div class="tip" @click="enter">详细请看说明（点击此处进入）</div>
+            
+</div>
+</template>
+<script>
+import { FullCalendar } from 'vue-full-calendar'
+export default{
+    data:function(){
+        return {
+            events:[
+                {
+                    id: 1,
+                    title: '数据1',
+                    allDay: true,
+                    start: new Date()
+                },
+                 {
+                    id:2,
+                    title: '数据2',
+                    start: new Date().getTime()+24*60*60*1000,
+                    end: new Date().getTime()+2*24*60*60*1000
+                },
+                 {
+                    id:3,
+                    title: '数据3',
+                    start: new Date().getTime()-3*24*60*60*1000,
+                },
+                {
+                    id: 1,
+                    title: '数据4',
+                    start: new Date(),
+                    end: new Date().getTime()+10*24*60*60*1000
+                },
+            ],
+            config: {}
+        }
+    },
+    components:{
+       FullCalendar
+    },
+    methods:{
+        dayClick(date, jsEvent, view){   // 点击当天的事件
+        },
+        eventSelected(event, jsEvent, view){  // 选中事件
+        },
+        viewRender(view,element){
+            console.log(view,element,111)
+        },
+        enter(){
+this.$router.push('/explain')
+        }
+    },
+    created(){
+        let self = this
+        this.config= {
+            locale: 'zh-cn',
+            height:'parent',
+            header:{
+                left:'prev,next, today',
+                center:'title',
+                right:'custom, month,agendaWeek,agendaDay'
+
+            },
+            buttonText: {
+                today:    '今天',
+                month:    '月',
+                week:     '周',
+                day:      '日'
+            },
+            firstDay:0, // 控制周一周日那个在前面
+            defaultView: 'month',
+            //agenda视图下是否显示all-day
+            allDaySlot: true,
+            //agenda视图下all-day的显示文本
+            allDayText: '全天',
+            eventLimit: true, //一天中显示多少条事件，多了隐藏
+            // eventLimitClick: 'day', //点击今天日列表图
+            timezone:'local',  // 时区默认本地的
+            slotLabelFormat:'HH:mm',  // 周视图和日视同的左侧时间显示
+            viewRender(view,element){
+                self.viewRender(view,element)
+            },
+            customButtons:{   // 新增按钮
+                custom:{
+                    text:'新增按钮',
+                    click:function(){
+                        alert('新增按钮')
+                    }
+                }
+            }
+        }
+    }
+}
+</script>
+<style>
+@import 'fullcalendar/dist/fullcalendar.css'
+</style>
+<style scoped lang="scss">
+#app {
+    height: 100%;
+}
+.calendar{
+    min-width:900px;;
+    height: 100%;
+    background: #fff;
+    .top{
+        height: 100px;
+        h2{
+            text-align: center;
+            font-size: 15px;
+        }
+        div{
+             font-size: 13px;
+        }
+    }
+    .full-calendar{
+      padding: 20px;
+      height: calc(100% - 30px);
+      /deep/{
+            .fc-unthemed th, .fc-unthemed td, .fc-unthemed thead, .fc-unthemed tbody, .fc-unthemed .fc-divider, .fc-unthemed .fc-row, .fc-unthemed .fc-content, .fc-unthemed .fc-popover, .fc-unthemed .fc-list-view, .fc-unthemed .fc-list-heading td {
+                border-color: #eaecf1;
+            }
+            .fc-header-toolbar {
+                height: 28px;
+                margin-bottom: 0;
+                line-height: 28px;
+                h2{
+                    font-size: 24px;
+                    color:#424656;
+                    letter-spacing: 0;
+                }
+            }
+            .fc-button {
+                height: 28px;
+                background: #fff;
+                border-color:#fff;
+                box-shadow: none;
+                padding: 0;
+            }
+            .fc-custom-button {
+                position: relative;
+                width: 80px;
+                border: 1px solid #bbbfcd;
+                border-radius: 20px;
+                font-size: 14px;
+                color:#424656;
+                text-indent: 15px;
+                &::after{
+                    content:"+";
+                    position: absolute;
+                    top:50%;
+                    left:-10px;
+                    transform: translateY(-50%);
+                    font-size:20px;
+                    padding-bottom: 5px;
+                    color:#a1a6b6;
+                }
+            }
+            .fc-today-button{
+                font-size: 14px;
+                color:#00a4ff;
+            }
+            .fc-next-button,
+            .fc-prev-button{
+                color: #7d8292;
+            }
+            .fc-button-group {
+                margin-left: 20px;
+                font-size: 14px;
+                button{
+                    width: 80px;
+                    color:#424656;
+                    border:1px solid #bbbfcd;
+                    &:first-child {
+                        border-top-left-radius: 20px;
+                        border-bottom-left-radius: 20px;
+                    }
+                     &:last-child {
+                        border-top-right-radius: 20px;
+                        border-bottom-right-radius: 20px;
+                    }
+                }
+                .fc-state-active {
+                    background: #00a4ff;
+                    color:#fff;
+                    text-shadow: none;
+                }
+            }
+             
+            .fc-month-view,
+            .fc-agendaDay-view,
+            .fc-agendaWeek-view{
+                .fc-widget-content{
+                    .fc-sun,
+                    .fc-sat{
+                        background: rgba(245,246,248,0.5);
+                    }
+                    .fc-day-number{
+                        font-size: 14px;
+                        letter-spacing: 0;
+                        line-height: 13px;
+                        float: left;
+                    }
+                    .fc-day-top{
+                        padding: 15px 12px 0 12px;
+                    }
+                    .fc-day-cnTerm,
+                    .fc-day-cnDate{
+                        font-size: 12px;
+                        color:#7d8292;
+                        float: right;
+                    }
+                    .fc-more {
+                        font-size: 12px;
+                        color: #7d8292;
+                    }
+                    .fc-event {
+                        cursor: pointer;
+                        font-size: 12px;
+                        color:#424656;
+                        background-color: rgba($color:#409eff,$alpha:0.1)!important;
+                        border:1px solid rgba($color:#409eff,$alpha:0.1)!important;
+                        border-left:2px solid rgba($color:#409eff,$alpha:0.1)!important;
+                        border-radius: 0;
+                    }
+                    .fc-day-grid-event {
+                    padding: 1px 0 1px 5px;
+                    }
+                }
+            }
+            .fc-agendaDay-view,
+            .fc-agendaWeek-view{
+                .fc-axis{
+                    font-size: 14px;
+                }
+                .fc-title{
+                    font-size: 14px;
+                    color:#409eff;
+                }
+            }
+            .fc-month-view{
+                .fc-event {
+                    &.fc-not-start{
+                        border-left:1px solid rgba($color:#409eff,$alpha:0.1)!important;
+
+                    }
+                }
+            }
+            .fc-agendaDay-view{
+                .fc-head{
+                    table {
+                        margin:15px 0;
+                    }
+                    .fc-day-header{
+                        display: none;
+                    }
+                }
+            }
+            .fc-head {
+                .fc-day-header,
+                .fc-widget-header,
+                .fc-head-container{
+                    border-top-color: #fff;
+                    border-left-color: #fff;
+                    border-right-color: #fff;
+                }
+                table {
+                    margin: 50px 0 15px 0;
+                    font-size: 14px;
+                    color: #424656;
+                }
+            }
+        }
+    }
+}
+.tip {
+    color: #409eff;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+</style>

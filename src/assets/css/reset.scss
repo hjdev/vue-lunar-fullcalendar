@@ -1,0 +1,70 @@
+*{
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  font-family: PingFangSC-Regular,"Source Han Sans";
+}
+#app,
+html,body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+}
+body{
+    font-weight: 100;
+    color:#1D262E;
+    font-size: 14px;
+    background: #F5F8FA;
+    font-size: 0.14rem;
+}
+ul,li,p,h1,h2,h3,h4,h5,h6,dl,dt,dd {
+    margin:0;
+    padding:0;
+    border:none;
+    list-style:none;
+}
+a{text-decoration:none;color:#333;}
+a:hover,a:focus{text-decoration: none;}
+input,textarea,button{border:none;outline: none;font-size: 14px;}
+button{cursor: pointer;font-size: 14px;}
+input{
+  text-indent: 5px;
+}
+img{
+  border:none;
+  height:auto;
+  max-width:100%;
+  vertical-align:middle;
+}
+i, cite, em, var, address, dfn{
+  font-style: normal;
+}
+p{line-height: 20px;}
+table{
+  border-collapse: collapse;
+  td,tr{
+    padding:0;
+    margin: 0;
+  }
+}
+
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input:-moz-placeholder{
+    color: #C7C7C7;
+    font-size: 14px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+.cursor{
+    cursor: pointer;
+}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{zoom:1}
+.input[type="number"] {
+   -moz-appearance: textfield;
+}
