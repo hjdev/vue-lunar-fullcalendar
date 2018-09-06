@@ -1,10 +1,5 @@
 <template>
   <div class="calendar">
-      <!-- <div class="top">
-      <h2>解决vue-full-calendar这个插件增加中国农历。24节气和节假日的问题</h2>
-      <div>这个日程表是比较完善的jq插件，然后被封装成了vue插件，功能可以参照<a href="https://fullcalendar.io/docs" target="_blank">https://fullcalendar.io/docs</a> 这个链接的API文档和git的vue-full-calendar上去熟悉，在这里我就不讲细了，主要是在网上难以找到vue下面改造的农历问题，查了很多资料
-          ，然后结合网上一些改造jq插件增加农历的方法思路，修改了源码达到了效果! 把目录下的(hj_vue_demo/full-calendar-2018修改部分/components)替换(node_modules/vue-full-calendar/components)文件</div>
-      （功能实现了，至于样式，细节自行去调试优化）</div> -->
       <div class="full-calendar"><full-calendar :events="events" ref="calendar" @event-selected="eventSelected" :config="config" 
                  @day-click="dayClick"></full-calendar></div>
     <div class="tip" @click="enter">详细请看说明（点击此处进入）</div>
@@ -35,10 +30,10 @@ export default{
                     start: new Date().getTime()-3*24*60*60*1000,
                 },
                 {
-                    id: 1,
-                    title: '数据4',
+                    id: 4,
+                    title: '数据4（解决vue-full-calendar这个插件增加中国农历。24节气和节假日的问题）',
                     start: new Date(),
-                    end: new Date().getTime()+10*24*60*60*1000
+                    end: new Date().getTime()+30*24*60*60*1000
                 },
             ],
             config: {}
@@ -48,6 +43,11 @@ export default{
        FullCalendar
     },
     methods:{
+        // 注释的是功能是可以修改对应的功能值属性，比如设置  eventLimit为 false
+        //  this.$refs.calendar.fireMethod('option',{
+        //      eventLimit :false
+        //  })
+
         dayClick(date, jsEvent, view){   // 点击当天的事件
         },
         eventSelected(event, jsEvent, view){  // 选中事件

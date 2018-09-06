@@ -40,6 +40,8 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "rimraf": "^2.6.0",
+    "sass": "^1.13.2",
+    "sass-loader": "^7.1.0",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "url-loader": "^0.5.8",
