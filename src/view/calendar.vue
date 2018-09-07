@@ -76,6 +76,7 @@ this.$router.push('/explain')
                 week:     '周',
                 day:      '日'
             },
+            // eventOrder:'index',   // 这个是控制事件排序的功能，意思是 按照字段 事件数据中index来排序
             firstDay:0, // 控制周一周日那个在前面
             defaultView: 'month',
             //agenda视图下是否显示all-day
