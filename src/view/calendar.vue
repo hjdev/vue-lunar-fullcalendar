@@ -1,12 +1,17 @@
 <template>
   <div class="calendar">
-      <div class="full-calendar"><full-calendar :events="events" ref="calendar" @event-selected="eventSelected" :config="config" 
-                 @day-click="dayClick"></full-calendar></div>
+    <div class="full-calendar">
+          <full-calendar :events="events"
+                ref="calendar"
+                @event-selected="eventSelected"
+                :config="config"
+                @day-click="dayClick"></full-calendar>
+    </div>
     <div class="tip" @click="enter">详细请看说明（点击此处进入）</div>
-            
 </div>
 </template>
 <script>
+/* eslint-disable */
 import { FullCalendar } from 'vue-full-calendar'
 export default{
     data:function(){
@@ -21,19 +26,19 @@ export default{
                  {
                     id:2,
                     title: '数据2',
-                    start: new Date().getTime()+24*60*60*1000,
-                    end: new Date().getTime()+2*24*60*60*1000
+                    start: new Date().getTime() + 24 * 60 * 60 * 1000,
+                    end: new Date().getTime() + 2 * 24 * 60 * 60 * 1000
                 },
-                 {
+                {
                     id:3,
                     title: '数据3',
-                    start: new Date().getTime()-3*24*60*60*1000,
+                    start: new Date().getTime() - 3 * 24 * 60 * 60 * 1000,
                 },
                 {
                     id: 4,
                     title: '数据4（解决vue-full-calendar这个插件增加中国农历。24节气和节假日的问题）',
                     start: new Date(),
-                    end: new Date().getTime()+30*24*60*60*1000
+                    end: new Date().getTime() + 30 * 24 * 60 * 60 * 1000
                 },
             ],
             config: {}

@@ -11,6 +11,7 @@
 </div>
 </template>
 <script>
+/* eslint-disable */
 export default{
     data:function(){
         return {
@@ -44,3 +45,4 @@ export default{
   }
 }
 </style>
+
