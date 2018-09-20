@@ -1,10 +1,12 @@
 <template>
   <div class="explain">
 <div class="top">
-      <h2>解决vue-full-calendar这个插件增加中国农历。24节气和节假日的问题</h2>
-      <div>这个日程表是比较完善的jq插件，然后被封装成了vue插件，功能可以参照<a href="https://fullcalendar.io/docs" target="_blank">https://fullcalendar.io/docs</a> 这个链接为官方的API文档和git的vue-full-calendar上去熟悉，在这里我就不讲细了，主要是在网上难以找到vue下面改造的农历问题，查了很多资料
-          ，然后结合网上一些改造jq插件增加农历的方法思路，修改了源码达到了效果! git下载了这个项目，然后npm install之后生成的文件node_modules把目录下的<a>(lunar-vue-full-calendar/full-calendar-2018修改部分/components)替换(node_modules/vue-full-calendar/components)文件 </a></div>
+      <h2>增加中国农历、24节气和节假日的功能</h2>
+      <h2>npm install vue-lunar-full-calendar</h2>
+      <div>A vue component for lunar fullcalendar. Uses Moment.js for date operations.</div>
+      <div>其它功能可以参照<a href="https://fullcalendar.io/docs" target="_blank">https://fullcalendar.io/docs</a> 这个链接为官方的API文档去熟悉</div>
      </div>
+     <img class="lunarImg" src="@/assets/img/lunar.png" alt="">
      <div>
          <span class="back" @click="back">back</span>
      </div>
@@ -27,6 +29,7 @@ export default{
 <style scoped lang="scss">
 .explain{
   font-size: 14px;
+  text-align: center;
   h2{
       text-align: center;
   }
@@ -40,8 +43,11 @@ export default{
       cursor: pointer;
       display: inline-block;
       margin-top: 40px;
- color:#409eff;
- font-size: 15px;
+      color:#409eff;
+      font-size: 15px;
+  }
+  .lunarImg {
+      height: 380px;
   }
 }
 </style>

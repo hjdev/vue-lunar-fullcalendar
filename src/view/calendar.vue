@@ -12,7 +12,7 @@
 </template>
 <script>
 /* eslint-disable */
-import { FullCalendar } from 'vue-full-calendar'
+import { FullCalendar } from 'vue-lunar-full-calendar'
 export default{
     data:function(){
         return {
