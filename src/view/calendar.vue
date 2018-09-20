@@ -1,18 +1,18 @@
 <template>
   <div class="calendar">
     <div class="full-calendar">
-          <full-calendar :events="events"
+          <lunar-full-calendar :events="events"
                 ref="calendar"
                 @event-selected="eventSelected"
                 :config="config"
-                @day-click="dayClick"></full-calendar>
+                @day-click="dayClick"></lunar-full-calendar>
     </div>
     <div class="tip" @click="enter">详细请看说明（点击此处进入）</div>
 </div>
 </template>
 <script>
 /* eslint-disable */
-import { FullCalendar } from 'vue-lunar-full-calendar'
+import { LunarFullCalendar } from 'vue-lunar-full-calendar'
 export default{
     data:function(){
         return {
@@ -45,7 +45,7 @@ export default{
         }
     },
     components:{
-       FullCalendar
+       LunarFullCalendar
     },
     methods:{
         // 注释的是功能是可以修改对应的功能值属性，比如设置  eventLimit为 false
