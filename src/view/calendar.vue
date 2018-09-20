@@ -52,7 +52,6 @@ export default{
         //  this.$refs.calendar.fireMethod('option',{
         //      eventLimit :false
         //  })
-
         dayClick(date, jsEvent, view){   // 点击当天的事件
         },
         eventSelected(event, jsEvent, view){  // 选中事件
@@ -61,7 +60,7 @@ export default{
             console.log(view,element,111)
         },
         enter(){
-this.$router.push('/explain')
+            this.$router.push('/explain')
         }
     },
     created(){
@@ -73,7 +72,6 @@ this.$router.push('/explain')
                 left:'prev,next, today',
                 center:'title',
                 right:'custom, month,agendaWeek,agendaDay'
-
             },
             buttonText: {
                 today:    '今天',
@@ -107,9 +105,6 @@ this.$router.push('/explain')
     }
 }
 </script>
-<style>
-@import 'fullcalendar/dist/fullcalendar.css'
-</style>
 <style scoped lang="scss">
 #app {
     height: 100%;
