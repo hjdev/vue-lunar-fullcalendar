@@ -36,7 +36,7 @@ export default{
                 },
                 {
                     id: 4,
-                    title: '数据4（解决vue-full-calendar这个插件增加中国农历。24节气和节假日的问题）',
+                    title: '数据4（增加中国农历、24节气和节假日的问题）',
                     start: new Date(),
                     end: new Date().getTime() + 30 * 24 * 60 * 60 * 1000
                 },
