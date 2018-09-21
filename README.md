@@ -1,9 +1,9 @@
-#vue-lunar-full-calendar
+vue-lunar-full-calendar
 ## Installation
 ```
 npm install --save vue-lunar-full-calendar
 ```
-# A vue component for lunar fullcalendar. Uses Moment.js for date operations.
+## A vue component for lunar fullcalendar. Uses Moment.js for date operations.
 [Fullcalendar docs](https://fullcalendar.io/docs/)
 #Increase the functions of Chinese lunar calendar, 24 solar terms and holidays
 #增加中国农历、24节气和节假日的功能
