@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 主页面结构
-const calendar = r => require.ensure([], () => r(require('@/view/calendar.vue')), 'calendar')
+const lunarFullCalendar = r => require.ensure([], () => r(require('@/view/lunarFullCalendar.vue')), 'lunarFullCalendar')
 // 说明
 const explain = r => require.ensure([], () => r(require('@/view/explain.vue')), 'explain')
 
@@ -9,12 +9,12 @@ Vue.use(Router)
 const routes = [
   {
     path: '*',
-    redirect: '/calendar'
+    redirect: '/lunarFullCalendar'
   },
   {
-    path: '/calendar',
-    name: 'calendar',
-    component: calendar
+    path: '/lunarFullCalendar',
+    name: 'lunarFullCalendar',
+    component: lunarFullCalendar
   },
   {
     path: '/explain',

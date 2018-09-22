@@ -1,5 +1,5 @@
 <template>
-  <div class="calendar">
+  <div class="lunarFullCalendar">
     <div class="full-calendar">
           <lunar-full-calendar :events="events"
                 ref="calendar"
@@ -109,7 +109,7 @@ export default{
 #app {
     height: 100%;
 }
-.calendar{
+.lunarFullCalendar{
     min-width:900px;;
     height: 100%;
     background: #fff;
