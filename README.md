@@ -11,7 +11,6 @@ Increase the functions of Chinese lunar calendar, 24 solar terms and holidays(хв
 ## API document
 
 [Fullcalendar docs](https://fullcalendar.io/docs/)
-
 ## Image
 
 ![Image text](https://raw.githubusercontent.com/a306916069/vue-lunar-fullcalendar/master/src/assets/img/lunar.png)
@@ -36,6 +35,18 @@ export default {
 ## Example App
 I have created a simple Vue 2 webpack application as an example/playground
 https://github.com/a306916069/vue-lunar-fullcalendar
+
+## Important function
+Use vue-lunar-full-calendar , You can use one function to get the date of a certain day.
+```html
+<lunar-full-calendar :events="events"></lunar-full-calendar>
+...
+<script>
+...
+  window.lunar(date)   // Date is the date.
+...
+</script>
+```
 
 ## Basic Usage
 

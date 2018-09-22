@@ -34,11 +34,24 @@ export default{
                     title: '数据3',
                     start: new Date().getTime() - 3 * 24 * 60 * 60 * 1000,
                 },
+               
                 {
                     id: 4,
                     title: '数据4（增加中国农历、24节气和节假日的问题）',
                     start: new Date(),
                     end: new Date().getTime() + 30 * 24 * 60 * 60 * 1000
+                },
+                {
+                    id: 5,
+                    title: '数据5（Increase the functions of Chinese lunar calendar, 24 solar terms and holidays）',
+                    start: new Date(),
+                    end: new Date().getTime() + 30 * 24 * 60 * 60 * 1000
+                },
+                {
+                    id: 6,
+                    title: '数据6（增加中国农历、24节气和节假日的问题Increase the functions of Chinese lunar calendar, 24 solar terms and holidays）',
+                    start: new Date()- 30 * 24 * 60 * 60 * 1000,
+                    end: new Date().getTime()
                 },
             ],
             config: {}
@@ -53,11 +66,14 @@ export default{
         //      eventLimit :false
         //  })
         dayClick(date, jsEvent, view){   // 点击当天的事件
+          alert('农历数据：'+JSON.stringify(window.lunar(date._d)))
+          console.log(date,jsEvent,'dayClick')
         },
         eventSelected(event, jsEvent, view){  // 选中事件
+            console.log(event,jsEvent,'eventSelected')
         },
         viewRender(view,element){
-            console.log(view,element,111)
+            console.log(view,element,'viewRender')
         },
         enter(){
             this.$router.push('/explain')
