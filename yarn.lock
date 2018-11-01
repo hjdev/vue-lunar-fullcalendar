@@ -2068,8 +2068,8 @@ ejs@^2.5.7:
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.6.1.tgz#498ec0d495655abc6f23cd61868d926464071aa0"
 
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30, electron-to-chromium@^1.3.47:
-  version "1.3.82"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.82.tgz#7d13ae4437d2a783de3f4efba96b186c540b67b1"
+  version "1.3.83"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.83.tgz#74584eb0972bb6777811c5d68d988c722f5e6666"
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -6346,9 +6346,9 @@ vue-loader@^13.3.0:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
-vue-lunar-full-calendar@^1.1.9:
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/vue-lunar-full-calendar/-/vue-lunar-full-calendar-1.1.9.tgz#2449143244f1e6219924f7a281bab51549d16f4f"
+vue-lunar-full-calendar@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vue-lunar-full-calendar/-/vue-lunar-full-calendar-1.2.0.tgz#c53afaf77c2e5200c966453350c3dd99b65a108a"
   dependencies:
     babel-plugin-transform-runtime "^6.23.0"
     jquery "^3.3.1"

@@ -82,12 +82,15 @@ export default{
     created(){
         let self = this
         this.config= {
+            //lunarCalendar
+            //Control whether the Chinese calendar shows true, unrealistic flase, default true.（lunarCalendar控制是否显示中国农历、显示的为true，隐藏为flase，默认为true）
+            lunarCalendar:true,
             locale: 'zh-cn',
             height:'parent',
             header:{
                 left:'prev,next, today',
                 center:'title',
-                right:'custom, month,agendaWeek,agendaDay'
+                right:'hide, show, custom, month,agendaWeek,agendaDay'
             },
             buttonText: {
                 today:    '今天',
@@ -114,6 +117,22 @@ export default{
                     text:'新增按钮',
                     click:function(){
                         alert('新增按钮')
+                    }
+                },
+                hide:{
+                    text:'隐藏农历',
+                    click:function(){
+                         self.$refs.calendar.fireMethod('option',{
+                        lunarCalendar :false
+                    })
+                    }
+                },
+                show:{
+                    text:'显示农历',
+                    click:function(){
+                         self.$refs.calendar.fireMethod('option',{
+                        lunarCalendar :true
+                    })
                     }
                 }
             }
@@ -163,6 +182,8 @@ export default{
                 box-shadow: none;
                 padding: 0;
             }
+            .fc-show-button,
+            .fc-hide-button,
             .fc-custom-button {
                 position: relative;
                 width: 80px;
@@ -170,6 +191,8 @@ export default{
                 border-radius: 20px;
                 font-size: 14px;
                 color:#424656;
+            }
+            .fc-custom-button{
                 text-indent: 15px;
                 &::after{
                     content:"+";
