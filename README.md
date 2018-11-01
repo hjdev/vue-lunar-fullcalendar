@@ -29,12 +29,23 @@ Increase the functions of Chinese lunar calendar, 24 solar terms and holidays(�
 ![Image text](https://raw.githubusercontent.com/a306916069/vue-lunar-fullcalendar/master/src/assets/img/lunar.png)
 
 ## Important function
-Use vue-lunar-full-calendar , You can use one function to get the date of a certain day.
+1、Use vue-lunar-full-calendar , You can use one function to get the date of a certain day.
+
+2、You can pass any custom options through to fullcalendar by using the `config` prop.
+Control whether the Chinese calendar shows true.
 ```html
-<lunar-full-calendar :events="events"></lunar-full-calendar>
+<lunar-full-calendar :events="events" :config="config"></lunar-full-calendar>
 ...
 <script>
 ...
+  data() {
+    return {
+      events: [],
+      config: {
+        lunarCalendar: true //Control whether the Chinese calendar shows true, unrealistic flase, default true.
+      },
+    }
+  },
   window.lunar(date)   // Date is the date.
 ...
 </script>
