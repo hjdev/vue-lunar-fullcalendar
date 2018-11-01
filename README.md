@@ -42,7 +42,7 @@ Control whether the Chinese calendar shows true.
     return {
       events: [],
       config: {
-        lunarCalendar: true //Control whether the Chinese calendar shows true, unrealistic flase, default true.
+        lunarCalendar: true //Control whether the Chinese calendar shows true, unrealistic flase, default true.（控制是否显示中国农历、显示的为true，不现实为flase，默认为true）
       },
     }
   },
