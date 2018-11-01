@@ -46,6 +46,7 @@ Control whether the Chinese calendar shows true.
       },
     }
   },
+...
   window.lunar(date)   // Date is the date.
 ...
 </script>
