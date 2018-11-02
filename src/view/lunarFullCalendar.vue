@@ -56,61 +56,69 @@ export default{
                 },
             ],
             config: {
-            //lunarCalendar
-            //Control whether the Chinese calendar shows true, unrealistic flase, default true.（lunarCalendar控制是否显示中国农历、显示的为true，隐藏为flase，默认为true）
-            lunarCalendar:true,
-            locale: 'zh-cn',
-            height:'parent',
-            header:{
-                left:'prev,next, today',
-                center:'title',
-                right:'hide, show, custom, month,agendaWeek,agendaDay'
-            },
-            buttonText: {
-                today:    '今天',
-                month:    '月',
-                week:     '周',
-                day:      '日'
-            },
-            // eventOrder:'index',   // 这个是控制事件排序的功能，意思是 按照字段 事件数据中index来排序
-            firstDay:0, // 控制周一周日那个在前面
-            defaultView: 'month',
-            //agenda视图下是否显示all-day
-            allDaySlot: true,
-            //agenda视图下all-day的显示文本
-            allDayText: '全天',
-            eventLimit: true, //一天中显示多少条事件，多了隐藏
-            // eventLimitClick: 'day', //点击今天日列表图
-            timezone:'local',  // 时区默认本地的
-            slotLabelFormat:'HH:mm',  // 周视图和日视同的左侧时间显示
-            viewRender(view,element){
-                self.viewRender(view,element)
-            },
-            customButtons:{   // 新增按钮
-                custom:{
-                    text:'新增按钮',
-                    click:function(){
-                        alert('新增按钮')
-                    }
+                //lunarCalendar
+                //Control whether the Chinese calendar shows true, unrealistic flase, default true.（lunarCalendar控制是否显示中国农历、显示的为true，隐藏为flase，默认为true）
+                lunarCalendar:true,
+                locale: 'zh-cn',
+                height:'parent',
+                header:{
+                    left:'prev,next, today',
+                    center:'title',
+                    right:'hide, custom, month,agendaWeek,agendaDay'
                 },
-                hide:{
-                    text:'隐藏农历',
-                    click:function(){
-                        self.$refs.calendar.fireMethod('option',{
-                            lunarCalendar :false
-                        })
-                    }
+                buttonText: {
+                    today:    '今天',
+                    month:    '月',
+                    week:     '周',
+                    day:      '日'
                 },
-                show:{
-                    text:'显示农历',
-                    click:function(){
-                         self.$refs.calendar.fireMethod('option',{
-                        lunarCalendar :true
-                    })
+                // eventOrder:'index',   // 这个是控制事件排序的功能，意思是 按照字段 事件数据中index来排序
+                firstDay:0, // 控制周一周日那个在前面
+                defaultView: 'month',
+                //agenda视图下是否显示all-day
+                allDaySlot: true,
+                //agenda视图下all-day的显示文本
+                allDayText: '全天',
+                eventLimit: true, //一天中显示多少条事件，多了隐藏
+                // eventLimitClick: 'day', //点击今天日列表图
+                timezone:'local',  // 时区默认本地的
+                slotLabelFormat:'HH:mm',  // 周视图和日视同的左侧时间显示
+                viewRender(view,element){
+                    self.viewRender(view,element)
+                },
+                customButtons:{   // 新增按钮
+                    hide:{
+                        text:'隐藏农历',
+                        click:function(){
+                            self.$refs.calendar.fireMethod('option',{
+                                lunarCalendar :false
+                            })
+                            self.$refs.calendar.fireMethod('option',{
+                                header:{
+                                    left:'prev,next, today',
+                                    center:'title',
+                                    right:'show, custom, month,agendaWeek,agendaDay'
+                                }
+                            })
+                        }
+                    },
+                    show:{
+                        text:'显示农历',
+                        click:function(){
+                            self.$refs.calendar.fireMethod('option',{
+                                lunarCalendar :true
+                            })
+                            self.$refs.calendar.fireMethod('option',{
+                                header:{
+                                    left:'prev,next, today',
+                                    center:'title',
+                                    right:'hide, custom, month,agendaWeek,agendaDay'
+                                }
+                            })
+                        }
                     }
                 }
             }
-        }
         }
     },
     components:{
@@ -139,7 +147,6 @@ export default{
 </script>
 <style scoped lang="scss">
 $color:#00a4ff;
-
 #app {
     height: 100%;
 }
@@ -182,27 +189,13 @@ $color:#00a4ff;
                 padding: 0;
             }
             .fc-show-button,
-            .fc-hide-button,
-            .fc-custom-button {
+            .fc-hide-button {
                 position: relative;
                 width: 80px;
                 border: 1px solid #bbbfcd;
                 border-radius: 20px;
                 font-size: 14px;
                 color:#424656;
-            }
-            .fc-custom-button{
-                text-indent: 15px;
-                &::after{
-                    content:"+";
-                    position: absolute;
-                    top:50%;
-                    left:-10px;
-                    transform: translateY(-50%);
-                    font-size:20px;
-                    padding-bottom: 5px;
-                    color:#a1a6b6;
-                }
             }
             .fc-today-button{
                 font-size: 14px;
@@ -290,7 +283,6 @@ $color:#00a4ff;
                 .fc-event {
                     &.fc-not-start{
                         border-left:1px solid rgba($color:$color,$alpha:0.1)!important;
-
                     }
                 }
             }
