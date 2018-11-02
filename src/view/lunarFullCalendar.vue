@@ -15,6 +15,7 @@
 import { LunarFullCalendar } from 'vue-lunar-full-calendar'
 export default{
     data:function(){
+        let self = this
         return {
             events:[
                 {
@@ -54,34 +55,7 @@ export default{
                     end: new Date().getTime()
                 },
             ],
-            config: {}
-        }
-    },
-    components:{
-       LunarFullCalendar
-    },
-    methods:{
-        // 注释的是功能是可以修改对应的功能值属性，比如设置  eventLimit为 false
-        //  this.$refs.calendar.fireMethod('option',{
-        //      eventLimit :false
-        //  })
-        dayClick(date, jsEvent, view){   // 点击当天的事件
-          alert('农历数据：'+JSON.stringify(window.lunar(date._d)))
-          console.log(date,jsEvent,'dayClick')
-        },
-        eventSelected(event, jsEvent, view){  // 选中事件
-            console.log(event,jsEvent,'eventSelected')
-        },
-        viewRender(view,element){
-            console.log(view,element,'viewRender')
-        },
-        enter(){
-            this.$router.push('/explain')
-        }
-    },
-    created(){
-        let self = this
-        this.config= {
+            config: {
             //lunarCalendar
             //Control whether the Chinese calendar shows true, unrealistic flase, default true.（lunarCalendar控制是否显示中国农历、显示的为true，隐藏为flase，默认为true）
             lunarCalendar:true,
@@ -122,9 +96,9 @@ export default{
                 hide:{
                     text:'隐藏农历',
                     click:function(){
-                         self.$refs.calendar.fireMethod('option',{
-                        lunarCalendar :false
-                    })
+                        self.$refs.calendar.fireMethod('option',{
+                            lunarCalendar :false
+                        })
                     }
                 },
                 show:{
@@ -137,10 +111,35 @@ export default{
                 }
             }
         }
+        }
+    },
+    components:{
+       LunarFullCalendar
+    },
+    methods:{
+        // 注释的是功能是可以修改对应的功能值属性，比如设置  eventLimit为 false
+        //  this.$refs.calendar.fireMethod('option',{
+        //      eventLimit :false
+        //  })
+        dayClick(date, jsEvent, view){   // 点击当天的事件
+          alert('农历数据：'+JSON.stringify(window.lunar(date._d)))
+          console.log(date,jsEvent,'dayClick')
+        },
+        eventSelected(event, jsEvent, view){  // 选中事件
+            console.log(event,jsEvent,'eventSelected')
+        },
+        viewRender(view,element){
+            console.log(view,element,'viewRender')
+        },
+        enter(){
+            this.$router.push('/explain')
+        }
     }
 }
 </script>
 <style scoped lang="scss">
+$color:#00a4ff;
+
 #app {
     height: 100%;
 }
@@ -207,7 +206,7 @@ export default{
             }
             .fc-today-button{
                 font-size: 14px;
-                color:#00a4ff;
+                color:$color;
             }
             .fc-next-button,
             .fc-prev-button{
@@ -230,7 +229,7 @@ export default{
                     }
                 }
                 .fc-state-active {
-                    background: #00a4ff;
+                    background: $color;
                     color:#fff;
                     text-shadow: none;
                 }
@@ -267,9 +266,9 @@ export default{
                         cursor: pointer;
                         font-size: 12px;
                         color:#424656;
-                        background-color: rgba($color:#409eff,$alpha:0.1)!important;
-                        border:1px solid rgba($color:#409eff,$alpha:0.1)!important;
-                        border-left:2px solid rgba($color:#409eff,$alpha:0.1)!important;
+                        background-color: rgba($color:$color,$alpha:0.1)!important;
+                        border:1px solid rgba($color:$color,$alpha:0.1)!important;
+                        border-left:2px solid rgba($color:$color,$alpha:0.1)!important;
                         border-radius: 0;
                     }
                     .fc-day-grid-event {
@@ -284,13 +283,13 @@ export default{
                 }
                 .fc-title{
                     font-size: 14px;
-                    color:#409eff;
+                    color:$color;
                 }
             }
             .fc-month-view{
                 .fc-event {
                     &.fc-not-start{
-                        border-left:1px solid rgba($color:#409eff,$alpha:0.1)!important;
+                        border-left:1px solid rgba($color:$color,$alpha:0.1)!important;
 
                     }
                 }
@@ -323,7 +322,7 @@ export default{
     }
 }
 .tip {
-    color: #409eff;
+    color: $color;
     text-align: center;
     font-size: 16px;
     cursor: pointer;
