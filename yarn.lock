@@ -6346,9 +6346,9 @@ vue-loader@^13.3.0:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
-vue-lunar-full-calendar@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/vue-lunar-full-calendar/-/vue-lunar-full-calendar-1.2.1.tgz#6a74c5d3b1f41c8390817c67cb6d21dc29ece0d5"
+vue-lunar-full-calendar@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/vue-lunar-full-calendar/-/vue-lunar-full-calendar-1.2.2.tgz#54639999f8aca10829e90fafeca457eca25c13be"
   dependencies:
     babel-plugin-transform-runtime "^6.23.0"
     jquery "^3.3.1"
