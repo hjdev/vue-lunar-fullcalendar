@@ -6262,7 +6262,7 @@ util-deprecate@~1.0.1:
 
 util@0.10.3:
   version "0.10.3"
-  resolved "https://registry.yarnpkg.com/util/-/util-0.10.3.tgz#7afb1afe50805246489e3db7fe0ed379336ac0f9"
+  resolved "http://registry.npmjs.org/util/-/util-0.10.3.tgz#7afb1afe50805246489e3db7fe0ed379336ac0f9"
   dependencies:
     inherits "2.0.1"
 
@@ -6346,9 +6346,9 @@ vue-loader@^13.3.0:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
-vue-lunar-full-calendar@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/vue-lunar-full-calendar/-/vue-lunar-full-calendar-1.2.0.tgz#c53afaf77c2e5200c966453350c3dd99b65a108a"
+vue-lunar-full-calendar@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/vue-lunar-full-calendar/-/vue-lunar-full-calendar-1.2.1.tgz#6a74c5d3b1f41c8390817c67cb6d21dc29ece0d5"
   dependencies:
     babel-plugin-transform-runtime "^6.23.0"
     jquery "^3.3.1"
