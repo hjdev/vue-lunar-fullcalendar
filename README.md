@@ -1,5 +1,5 @@
 ## vue-lunar-full-calendar
-
+一个带有农历的日程控件
 ## Installation
 ```
 npm install --save vue-lunar-full-calendar
