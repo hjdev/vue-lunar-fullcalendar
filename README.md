@@ -32,6 +32,7 @@ Increase the functions of Chinese lunar calendar, 24 solar terms and holidays
 
 ## Important function
 1、window.lunar(date) 能够为你获取某一时段的农历等信息
+
 Use vue-lunar-full-calendar , You can use one function to get the date of a certain day.
 
 2、config中添加了一个lunarCalendar控制是否显示中国农历、显示的为true，隐藏为flase，默认为true
