@@ -13,7 +13,7 @@ Vue.use(LunarFullCalendar)
 But you can also import the standalone component to add locally or for more complex installations.
 
 ```js
-// foo.vue
+// index.vue
 import { LunarFullCalendar } from 'vue-lunar-full-calendar'
 export default {
   components: {
@@ -29,10 +29,10 @@ Increase the functions of Chinese lunar calendar, 24 solar terms and holidays(�
 ![Image text](https://raw.githubusercontent.com/a306916069/vue-lunar-fullcalendar/master/src/assets/img/lunar.png)
 
 ## Important function
-1、Use vue-lunar-full-calendar , You can use one function to get the date of a certain day.（window.lunar(date) 能够为你获取某一时段的农历等信息）
+1、window.lunar(date) 能够为你获取某一时段的农历等信息(Use vue-lunar-full-calendar , You can use one function to get the date of a certain day.)
 
-2、You can pass any custom options through to fullcalendar by using the `config` prop.
-Control whether the Chinese calendar shows true.（config中添加了一个lunarCalendar控制是否显示中国农历、显示的为true，隐藏为flase，默认为true）
+2、config中添加了一个lunarCalendar控制是否显示中国农历、显示的为true，隐藏为flase，默认为true(You can pass any custom options through to fullcalendar by using the `config` prop.
+Control whether the Chinese calendar shows true.)
 ```html
 <lunar-full-calendar :events="events" :config="config"></lunar-full-calendar>
 ...
@@ -42,7 +42,7 @@ Control whether the Chinese calendar shows true.（config中添加了一个lunar
     return {
       events: [],
       config: {
-        lunarCalendar: true //Control whether the Chinese calendar shows true, unrealistic flase, default true.（控制是否显示中国农历、显示的为true，隐藏为flase，默认为true）
+        lunarCalendar: true   // 控制是否显示中国农历、显示的为true，隐藏为flase，默认为true(Control whether the Chinese calendar shows true, unrealistic flase, default true.)
       },
     }
   },
@@ -55,10 +55,10 @@ Control whether the Chinese calendar shows true.（config中添加了一个lunar
 
 ## API document
 
-[Fullcalendar docs](https://fullcalendar.io/docs/)
+[Fullcalendar文档(Fullcalendar docs)](https://fullcalendar.io/docs/)
 
 ## Example App
-I have created a simple Vue 2 webpack application as an example/playground
+关于基于vue2依赖包的例子(I have created a simple Vue 2 webpack application as an example/playground)
 https://github.com/a306916069/vue-lunar-fullcalendar
 
 ## Basic Usage
