@@ -6,21 +6,20 @@ const lunarFullCalendar = r => require.ensure([], () => r(require('@/view/lunarF
 const explain = r => require.ensure([], () => r(require('@/view/explain.vue')), 'explain')
 
 Vue.use(Router)
-const routes = [
-  {
-    path: '*',
-    redirect: '/lunarFullCalendar'
-  },
-  {
-    path: '/lunarFullCalendar',
-    name: 'lunarFullCalendar',
-    component: lunarFullCalendar
-  },
-  {
-    path: '/explain',
-    name: 'explain',
-    component: explain
-  }
+const routes = [{
+  path: '*',
+  redirect: '/vue-lunar-fullCalendar'
+},
+{
+  path: '/vue-lunar-fullCalendar',
+  name: 'lunarFullCalendar',
+  component: lunarFullCalendar
+},
+{
+  path: '/explain',
+  name: 'explain',
+  component: explain
+}
 ]
 
 const router = new Router({
@@ -31,7 +30,10 @@ const router = new Router({
     if (savedPosition) {
       return savedPosition
     } else {
-      return {x: 0, y: 0}
+      return {
+        x: 0,
+        y: 0
+      }
     }
   }
 })
