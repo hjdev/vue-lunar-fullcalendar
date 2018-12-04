@@ -1,9 +1,13 @@
 ## vue-lunar-full-calendar
-一个集成fullcalendar 所有功能且带有能控制获取农历的日程控件
+
+一个集成 fullcalendar 所有功能且带有能控制获取农历的日程控件
+
 ## Installation
+
 ```
 npm install --save vue-lunar-full-calendar
 ```
+
 ```js
 //main.js
 import LunarFullCalendar from 'vue-lunar-full-calendar'
@@ -18,10 +22,12 @@ import { LunarFullCalendar } from 'vue-lunar-full-calendar'
 export default {
   components: {
     LunarFullCalendar
-  },
+  }
 }
 ```
+
 ## Image
+
 ```
 增加中国农历、24节气和节假日的功能
 a vue component for lunar fullcalendar. Uses Moment.js for date operations.
@@ -30,31 +36,37 @@ Increase the functions of Chinese lunar calendar, 24 solar terms and holidays
 
 ![Image text](https://raw.githubusercontent.com/a306916069/vue-lunar-fullcalendar/master/src/assets/img/lunar.png)
 
+## Demo
+
+[Demo](http://a5263954.gz01.bdysite.com/fullcalendar/#/vue-lunar-fullCalendar)
+
 ## Important function
+
 1、window.lunar(date) 能够为你获取某一时段的农历等信息
 
 Use vue-lunar-full-calendar , You can use one function to get the date of a certain day.
 
-2、config中添加了一个lunarCalendar控制是否显示中国农历、显示的为true，隐藏为flase，默认为true
+2、config 中添加了一个 lunarCalendar 控制是否显示中国农历、显示的为 true，隐藏为 flase，默认为 true
 
 You can pass any custom options through to fullcalendar by using the `config` prop.
 Control whether the Chinese calendar shows true.
+
 ```html
 <lunar-full-calendar :events="events" :config="config"></lunar-full-calendar>
 ...
 <script>
-...
-  data() {
-    return {
-      events: [],
-      config: {
-        lunarCalendar: true   // 控制是否显示中国农历、显示的为true，隐藏为flase，默认为true(Control whether the Chinese calendar shows true, unrealistic flase, default true.)
-      },
-    }
-  },
-...
-  window.lunar(date)   // Date is the date.
-...
+  ...
+    data() {
+      return {
+        events: [],
+        config: {
+          lunarCalendar: true   // 控制是否显示中国农历、显示的为true，隐藏为flase，默认为true(Control whether the Chinese calendar shows true, unrealistic flase, default true.)
+        },
+      }
+    },
+  ...
+    window.lunar(date)   // Date is the date.
+  ...
 </script>
 ```
 
@@ -62,10 +74,11 @@ Control whether the Chinese calendar shows true.
 
 ## API document
 
-[Fullcalendar文档(Fullcalendar docs)](https://fullcalendar.io/docs/)
+[Fullcalendar 文档(Fullcalendar docs)](https://fullcalendar.io/docs/)
 
 ## Example App
-关于基于vue2依赖包的例子(I have created a simple Vue 2 webpack application as an example/playground)
+
+关于基于 vue2 依赖包的例子(I have created a simple Vue 2 webpack application as an example/playground)
 https://github.com/a306916069/vue-lunar-fullcalendar
 
 ## Basic Usage
@@ -73,71 +86,72 @@ https://github.com/a306916069/vue-lunar-fullcalendar
 You can pass an array of fullclendar objects through the props
 
 ```html
-<lunar-full-calendar :events="events"></lunar-full-calendar>
-...
+<lunar-full-calendar :events="events"></lunar-full-calendar> ...
 <script>
-...
-  data() {
-    return {
-      events: [
-        {
-            title  : 'event1',
-            start  : '2018-01-01',
-        },
-        {
-            title  : 'event2',
-            start  : '2018-01-05',
-            end    : '2018-01-07',
-        },
-        {
-            title  : 'event3',
-            start  : '2018-01-09T12:30:00',
-            allDay : false,
-        },
-      ]
+  ...
+    data() {
+      return {
+        events: [
+          {
+              title  : 'event1',
+              start  : '2018-01-01',
+          },
+          {
+              title  : 'event2',
+              start  : '2018-01-05',
+              end    : '2018-01-07',
+          },
+          {
+              title  : 'event3',
+              start  : '2018-01-09T12:30:00',
+              allDay : false,
+          },
+        ]
+      }
     }
-  }
-...
+  ...
 </script>
 ```
+
 More event options can be found at http://fullcalendar.io/docs/event_data/Event_Object/
 
 ## Using a JSON Feed
 
 ```html
-<lunar-full-calendar :event-sources="eventSources"></lunar-full-calendar>
-...
+<lunar-full-calendar :event-sources="eventSources"></lunar-full-calendar> ...
 <script>
-...
-  data() {
-    return {
-      eventSources: [
-        {
-          events(start, end, timezone, callback) {
-            self.$http.get(`/myFeed`, {timezone: timezone}).then(response => {
-              callback(response.data.data)
-            })
+  ...
+    data() {
+      return {
+        eventSources: [
+          {
+            events(start, end, timezone, callback) {
+              self.$http.get(`/myFeed`, {timezone: timezone}).then(response => {
+                callback(response.data.data)
+              })
+            },
+            color: 'yellow',
+            textColor: 'black',
           },
-          color: 'yellow',
-          textColor: 'black',
-        },
-        {
-          events(start, end, timezone, callback) {
-            self.$http.get(`/anotherFeed`, {timezone: self.timezone}).then(response => {
-              callback(response.data.data)
-            })
+          {
+            events(start, end, timezone, callback) {
+              self.$http.get(`/anotherFeed`, {timezone: self.timezone}).then(response => {
+                callback(response.data.data)
+              })
+            },
+            color: 'red',
           },
-          color: 'red',
-        },
-      ]
+        ]
+      }
     }
-  }
-...
+  ...
 </script>
 ```
 
 ## Custom Config
+
 You can pass any custom [options](https://fullcalendar.io/docs/) through to fullcalendar by using the `config` prop, this includes extra event handlers.
+
 ```html
 <lunar-full-calendar :events="events" :config="config" />
 ...
@@ -157,18 +171,22 @@ You can pass any custom [options](https://fullcalendar.io/docs/) through to full
 ...
 </script>
 ```
+
 ## Further Props
+
 You can edit the look and feel of fullcalendar by passing through extra props. These all have sensible defaults
 
-- __header__ - [obj] - [docs](http://fullcalendar.io/docs/display/header/)
-- __defaultView__ - ['agendaWeek'] - [docs](http://fullcalendar.io/docs/views/defaultView/)
-- __editable__ - [true] - [docs](http://fullcalendar.io/docs/event_ui/editable/)
-- __selectable__ - [true] -  [docs](http://fullcalendar.io/docs/selection/selectable/)
-- __selectHelper__ - [true] - [docs](http://fullcalendar.io/docs/selection/selectHelper/)
-- __config__ - [true] - Pass your own custom config straight through to fullcalendar
+- **header** - [obj] - [docs](http://fullcalendar.io/docs/display/header/)
+- **defaultView** - ['agendaWeek'] - [docs](http://fullcalendar.io/docs/views/defaultView/)
+- **editable** - [true] - [docs](http://fullcalendar.io/docs/event_ui/editable/)
+- **selectable** - [true] - [docs](http://fullcalendar.io/docs/selection/selectable/)
+- **selectHelper** - [true] - [docs](http://fullcalendar.io/docs/selection/selectHelper/)
+- **config** - [true] - Pass your own custom config straight through to fullcalendar
 
-## Methods 
+## Methods
+
 Sometimes you may need to manipulate the Calendar from your parent component, you can use `fireMethod` for this. This works with anything in the [Fullcalendar docs](https://fullcalendar.io/docs/) suffixed with `(method)` and it will dynamically handle as many arguments as needed.
+
 ```html
 <lunar-full-calendar :events="events" ref="calendar" />
 ...
@@ -179,7 +197,7 @@ Sometimes you may need to manipulate the Calendar from your parent component, yo
       events: [],
     }
   },
-  
+
   methods: {
     next() {
       this.$refs.calendar.fireMethod('next')
@@ -195,38 +213,47 @@ Sometimes you may need to manipulate the Calendar from your parent component, yo
 ## Events and Hooks
 
 ### Emitted
-- __event-selected(event, jsEvent, view)__ - Triggered on eventClick()
-- __event-drop(event)__ - Triggered on eventDrop()
-- __event-resize(event)__ - Triggered on eventResize()
-- __event-created(event)__ - Triggered on select()
-- __event-receive(event)__ - Triggered on eventReceive()
-- __event-render(event)__ - Triggered on eventRender()
-- __day-click(date, jsEvent, view)__ - Triggered on dayClick()
+
+- **event-selected(event, jsEvent, view)** - Triggered on eventClick()
+- **event-drop(event)** - Triggered on eventDrop()
+- **event-resize(event)** - Triggered on eventResize()
+- **event-created(event)** - Triggered on select()
+- **event-receive(event)** - Triggered on eventReceive()
+- **event-render(event)** - Triggered on eventRender()
+- **day-click(date, jsEvent, view)** - Triggered on dayClick()
 
 You can listen for these events using the following markup
 
 ```html
-<lunar-full-calendar :event-sources="eventSources" @event-selected="eventSelected"></lunar-full-calendar>
+<lunar-full-calendar
+  :event-sources="eventSources"
+  @event-selected="eventSelected"
+></lunar-full-calendar>
 ```
+
 ### Listens on
-- __render-event(event)__ - Adds a new event to calendar
-- __remove-event(event)__ - Removes event from calendar
-- __rerender-events()__ - Rerenders events to reflect local changes
-- __refetch-events()__ - Makes another JSON call to event sources
-- __reload-events()__ - Removes all events and adds all events in this.events
+
+- **render-event(event)** - Adds a new event to calendar
+- **remove-event(event)** - Removes event from calendar
+- **rerender-events()** - Rerenders events to reflect local changes
+- **refetch-events()** - Makes another JSON call to event sources
+- **reload-events()** - Removes all events and adds all events in this.events
 
 You can trigger these events in the parent component like so...
 
 ```html
-<lunar-full-calendar ref="calendar" :event-sources="eventSources"></lunar-full-calendar>
+<lunar-full-calendar
+  ref="calendar"
+  :event-sources="eventSources"
+></lunar-full-calendar>
 ...
 <script>
-...
-  methods: {
-    refreshEvents() {
-      this.$refs.calendar.$emit('refetch-events')
-    },
-  }
-...
+  ...
+    methods: {
+      refreshEvents() {
+        this.$refs.calendar.$emit('refetch-events')
+      },
+    }
+  ...
 </script>
 ```
