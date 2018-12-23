@@ -1,9 +1,21 @@
+## vue-lunar-full-calendar
+
 [![NPM version](https://img.shields.io/badge/npm-v1.2.2-green.svg)](https://www.npmjs.com/package/vue-lunar-full-calendar)
 [![NPM downloads](https://img.shields.io/badge/downloads-vue--lunar--full--calendar-green.svg)](https://www.npmjs.com/package/vue-lunar-full-calendar)
 
-## vue-lunar-full-calendar
+## Image
 
-一个集成 fullcalendar 所有功能且带有能控制获取农历的日程控件
+```
+增加中国农历、24节气和节假日的功能
+a vue component for lunar fullcalendar. Uses Moment.js for date operations.
+Increase the functions of Chinese lunar calendar, 24 solar terms and holidays
+```
+
+![Image text](https://raw.githubusercontent.com/a306916069/vue-lunar-fullcalendar/master/src/assets/img/lunar.png)
+
+## Demo
+
+[Demo](http://a5263954.gz01.bdysite.com/fullcalendar/#/vue-lunar-fullCalendar)
 
 ## Installation
 
@@ -28,20 +40,6 @@ export default {
   }
 }
 ```
-
-## Image
-
-```
-增加中国农历、24节气和节假日的功能
-a vue component for lunar fullcalendar. Uses Moment.js for date operations.
-Increase the functions of Chinese lunar calendar, 24 solar terms and holidays
-```
-
-![Image text](https://raw.githubusercontent.com/a306916069/vue-lunar-fullcalendar/master/src/assets/img/lunar.png)
-
-## Demo
-
-[Demo](http://a5263954.gz01.bdysite.com/fullcalendar/#/vue-lunar-fullCalendar)
 
 ## Important function
 
