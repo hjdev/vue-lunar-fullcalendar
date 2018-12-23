@@ -37,9 +37,4 @@ const router = new Router({
     }
   }
 })
-// 全局路由配置
-// 路由开始之前的操作
-router.beforeEach((to, from, next) => {
-  next()
-})
 export default router
