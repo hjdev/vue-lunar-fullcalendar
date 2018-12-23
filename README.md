@@ -1,3 +1,6 @@
+[![NPM version](https://img.shields.io/npm/v/smox.svg?style=flat-square)](https://www.npmjs.com/package/vue-lunar-full-calendar)
+[![NPM downloads](https://img.shields.io/npm/dm/smox.svg?style=flat-square)](https://www.npmjs.com/package/vue-lunar-full-calendar)
+
 ## vue-lunar-full-calendar
 
 一个集成 fullcalendar 所有功能且带有能控制获取农历的日程控件
@@ -153,22 +156,21 @@ More event options can be found at http://fullcalendar.io/docs/event_data/Event_
 You can pass any custom [options](https://fullcalendar.io/docs/) through to fullcalendar by using the `config` prop, this includes extra event handlers.
 
 ```html
-<lunar-full-calendar :events="events" :config="config" />
-...
+<lunar-full-calendar :events="events" :config="config" /> ...
 <script>
-...
-  data() {
-    return {
-      events: [],
-      config: {
-        weekends: false,
-        drop(...args) {
-          //handle drop logic in parent
+  ...
+    data() {
+      return {
+        events: [],
+        config: {
+          weekends: false,
+          drop(...args) {
+            //handle drop logic in parent
+          },
         },
-      },
-    }
-  },
-...
+      }
+    },
+  ...
 </script>
 ```
 
@@ -188,25 +190,24 @@ You can edit the look and feel of fullcalendar by passing through extra props. T
 Sometimes you may need to manipulate the Calendar from your parent component, you can use `fireMethod` for this. This works with anything in the [Fullcalendar docs](https://fullcalendar.io/docs/) suffixed with `(method)` and it will dynamically handle as many arguments as needed.
 
 ```html
-<lunar-full-calendar :events="events" ref="calendar" />
-...
+<lunar-full-calendar :events="events" ref="calendar" /> ...
 <script>
-...
-  data() {
-    return {
-      events: [],
-    }
-  },
+  ...
+    data() {
+      return {
+        events: [],
+      }
+    },
 
-  methods: {
-    next() {
-      this.$refs.calendar.fireMethod('next')
+    methods: {
+      next() {
+        this.$refs.calendar.fireMethod('next')
+      },
+      changeView(view) {
+        this.$refs.calendar.fireMethod('changeView', view)
+      },
     },
-    changeView(view) {
-      this.$refs.calendar.fireMethod('changeView', view)
-    },
-  },
-...
+  ...
 </script>
 ```
 
