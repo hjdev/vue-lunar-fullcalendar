@@ -1,5 +1,5 @@
-[![NPM version](https://img.shields.io/npm/v/npm/next.svg?registry_uri=https://www.npmjs.com/package/vue-lunar-full-calendar/v/1.2.2)](https://www.npmjs.com/package/vue-lunar-full-calendar)
-[![NPM downloads](https://img.shields.io/badge/downloads-vue--lunar--full--calendar-blue.svg)](https://www.npmjs.com/package/vue-lunar-full-calendar)
+[![NPM version](https://img.shields.io/badge/npm-v1.2.2-green.svg)](https://www.npmjs.com/package/vue-lunar-full-calendar)
+[![NPM downloads](https://img.shields.io/badge/downloads-vue--lunar--full--calendar-green.svg)](https://www.npmjs.com/package/vue-lunar-full-calendar)
 
 ## vue-lunar-full-calendar
 
