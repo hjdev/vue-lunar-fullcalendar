@@ -12,8 +12,13 @@
   </div>
 </template>
 <script>
-import { LunarFullCalendar } from 'vue-lunar-full-calendar'
+// import { LunarFullCalendar } from 'vue-lunar-full-calendar'
+// import { LunarFullCalendar } from '../../components'
+import { LunarFullCalendar } from '../../lib/LunarFullCalendar.min.js'
 export default {
+  components: {
+    LunarFullCalendar
+  },
   data: function () {
     let self = this
     return {
@@ -119,9 +124,6 @@ export default {
       }
     }
   },
-  components: {
-    LunarFullCalendar
-  },
   methods: {
     // 注释的是功能是可以修改对应的功能值属性，比如设置  eventLimit为 false
     //  this.$refs.calendar.fireMethod('option',{
@@ -149,16 +151,16 @@ $color: #45b984;
   min-width: 900px;
   height: 100%;
   background: #fff;
-  .top {
-    height: 100px;
-    h2 {
-      text-align: center;
-      font-size: 15px;
-    }
-    div {
-      font-size: 13px;
-    }
-  }
+  //   .top {
+  //     height: 100px;
+  //     h2 {
+  //       text-align: center;
+  //       font-size: 15px;
+  //     }
+  //     div {
+  //       font-size: 13px;
+  //     }
+  //   }
   .full-calendar {
     padding: 20px;
     height: calc(100% - 30px);
