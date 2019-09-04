@@ -1,6 +1,6 @@
 {
   "name": "vue-lunar-full-calendar",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "lunar-vue-full-calendar",
   "author": "hj",
   "main": "lib/LunarFullCalendar.min.js",
@@ -29,7 +29,7 @@
   ],
   "dependencies": {
     "jquery": "^3.3.1",
-    "lodash.defaultsdeep": "^4.6.0",
+    "lodash.defaultsdeep": "^4.6.1",
     "moment": "^2.22.2"
   },
   "devDependencies": {
