@@ -24,6 +24,7 @@ const routes = [{
 
 const router = new Router({
   // mode:'history',//default: hash ,history
+  // base: '/vue-lunar-fullcalendar',
   routes,
   linkActiveClass: 'my-active',
   scrollBehavior (to, from, savedPosition) {
