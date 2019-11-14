@@ -1,20 +1,21 @@
 <template>
   <div class="lunarFullCalendar">
     <div class="full-calendar">
-      <lunar-full-calendar :events="events"
-                           ref="calendar"
-                           @event-selected="eventSelected"
-                           :config="config"
-                           @day-click="dayClick"></lunar-full-calendar>
+      <lunar-full-calendar
+        :events="events"
+        ref="calendar"
+        @event-selected="eventSelected"
+        :config="config"
+        @day-click="dayClick"
+      ></lunar-full-calendar>
     </div>
-    <div class="tip"
-         @click="enter">详细请看说明（点击此处进入）</div>
+    <div class="tip" @click="enter">详细请看说明（点击此处进入）</div>
   </div>
 </template>
 <script>
 // import { LunarFullCalendar } from 'vue-lunar-full-calendar'
-import { LunarFullCalendar } from '../../components'
-// import { LunarFullCalendar } from '../../lib/LunarFullCalendar.min.js'
+// import { LunarFullCalendar } from '../../components'
+import { LunarFullCalendar } from '../../lib/LunarFullCalendar.min.js'
 export default {
   components: {
     LunarFullCalendar
@@ -49,13 +50,15 @@ export default {
         },
         {
           id: 5,
-          title: '数据5（Increase the functions of Chinese lunar calendar, 24 solar terms and holidays）',
+          title:
+            '数据5（Increase the functions of Chinese lunar calendar, 24 solar terms and holidays）',
           start: new Date(),
           end: new Date().getTime() + 30 * 24 * 60 * 60 * 1000
         },
         {
           id: 6,
-          title: '数据6（增加中国农历、24节气和节假日的问题Increase the functions of Chinese lunar calendar, 24 solar terms and holidays）',
+          title:
+            '数据6（增加中国农历、24节气和节假日的问题Increase the functions of Chinese lunar calendar, 24 solar terms and holidays）',
           start: new Date() - 30 * 24 * 60 * 60 * 1000,
           end: new Date().getTime()
         }
@@ -89,7 +92,8 @@ export default {
         viewRender (view, element) {
           self.viewRender(view, element)
         },
-        customButtons: { // 新增按钮
+        customButtons: {
+          // 新增按钮
           hide: {
             text: '隐藏农历',
             click: function () {
@@ -129,11 +133,13 @@ export default {
     //  this.$refs.calendar.fireMethod('option',{
     //      eventLimit :false
     //  })
-    dayClick (date, jsEvent, view) { // 点击当天的事件
+    dayClick (date, jsEvent, view) {
+      // 点击当天的事件
       alert('农历数据：' + JSON.stringify(window.lunar(date._d)))
       console.log(date, jsEvent, 'dayClick')
     },
-    eventSelected (event, jsEvent, view) { // 选中事件
+    eventSelected (event, jsEvent, view) {
+      // 选中事件
       console.log(event, jsEvent, 'eventSelected')
     },
     viewRender (view, element) {

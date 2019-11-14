@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const path = require('path');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -6,10 +7,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 const {
   CleanWebpackPlugin
 } = require('clean-webpack-plugin')
+const version = process.env.VERSION || require('../package.json').version
 
-function resolve(dir) {
-  return path.join(__dirname, '..', dir)
-}
+let banner =
+  'vue-lunar-fullcalendar v' + version + '\n' +
+  '(c) ' + new Date().getFullYear() + ' h j <https://a306916069.github.io> \n' +
+  '@license MIT'
 
 module.exports = {
   mode: 'production',
@@ -92,6 +95,9 @@ module.exports = {
   plugins: [
     new ProgressBarPlugin(),
     new VueLoaderPlugin(),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.BannerPlugin({
+      banner
+    })
   ]
 }

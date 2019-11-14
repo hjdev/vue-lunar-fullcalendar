@@ -1,6 +1,6 @@
 {
   "name": "vue-lunar-full-calendar",
-  "version": "1.2.7",
+  "version": "1.2.8",
   "description": "lunar-vue-full-calendar",
   "author": "hj",
   "main": "lib/LunarFullCalendar.min.js",
