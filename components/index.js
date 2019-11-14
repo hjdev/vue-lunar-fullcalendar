@@ -1,10 +1,19 @@
 import LunarFullCalendar from './LunarFullCalendar/LunarFullCalendar.vue'
 
-export default {
-  install: function (Vue, options) {
-    Vue.component('lunar-full-calendar', LunarFullCalendar)
-  }
+const install = (Vue) => {
+  Vue.component('lunar-full-calendar', LunarFullCalendar)
 }
-export {
+module.exports = {
+  install,
   LunarFullCalendar
 }
+module.exports.default = module.exports
+// export default {
+//   install,
+//   LunarFullCalendar
+// }
+
+// export {
+//   install,
+//   LunarFullCalendar
+// }

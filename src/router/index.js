@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // 主页面结构
-const lunarFullCalendar = r => require.ensure([], () => r(require('@/view/lunarFullCalendar.vue')), 'lunarFullCalendar')
+const lunarFullCalendar = () => import('@/view/lunarFullCalendar.vue')
 // 说明
-const explain = r => require.ensure([], () => r(require('@/view/explain.vue')), 'explain')
+const explain = () => import('@/view/explain.vue')
 
 Vue.use(Router)
 const routes = [{
@@ -12,7 +12,7 @@ const routes = [{
 },
 {
   path: '/vue-lunar-fullCalendar',
-  name: 'lunarFullCalendar',
+  name: 'fullCalendar',
   component: lunarFullCalendar
 },
 {

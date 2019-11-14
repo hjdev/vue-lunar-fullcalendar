@@ -12,6 +12,7 @@ const defaultsDeep = require('lodash.defaultsdeep')
 const $ = require('jquery')
 
 export default {
+  name: 'LunarFullCalendar',
   props: {
     events: {
       default () {

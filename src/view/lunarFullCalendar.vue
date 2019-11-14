@@ -13,8 +13,8 @@
 </template>
 <script>
 // import { LunarFullCalendar } from 'vue-lunar-full-calendar'
-// import { LunarFullCalendar } from '../../components'
-import { LunarFullCalendar } from '../../lib/LunarFullCalendar.min.js'
+import { LunarFullCalendar } from '../../components'
+// import { LunarFullCalendar } from '../../lib/LunarFullCalendar.min.js'
 export default {
   components: {
     LunarFullCalendar
