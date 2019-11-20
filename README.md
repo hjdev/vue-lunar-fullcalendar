@@ -6,7 +6,6 @@
 ## Image and demo
 
 ```
-增加中国农历、24节气和节假日的功能
 a vue component for lunar fullcalendar. Uses Moment.js for date operations.
 Increase the functions of Chinese lunar calendar, 24 solar terms and holidays
 ```
@@ -41,11 +40,11 @@ export default {
 
 ## Important function
 
-1、window.lunar(date) 能够为你获取某一时段的农历等信息
+1、window.lunar(date)
 
 Use vue-lunar-full-calendar , You can use one function to get the date of a certain day.
 
-2、config 中添加了一个 lunarCalendar 控制是否显示中国农历、显示的为 true，隐藏为 flase，默认为 true
+2、lunarCalendar (default: true)
 
 You can pass any custom options through to fullcalendar by using the `config` prop.
 Control whether the Chinese calendar shows true.
@@ -59,7 +58,7 @@ Control whether the Chinese calendar shows true.
       return {
         events: [],
         config: {
-          lunarCalendar: true   // 控制是否显示中国农历、显示的为true，隐藏为flase，默认为true(Control whether the Chinese calendar shows true, unrealistic flase, default true.)
+          lunarCalendar: true   //(Control whether the Chinese calendar shows true, unrealistic flase, default true.)
         },
       }
     },
@@ -78,7 +77,7 @@ Control whether the Chinese calendar shows true.
 
 ## Example App
 
-关于基于 vue2 依赖包的例子(I have created a simple Vue 2 webpack application as an example/playground)
+I have created a simple Vue 2 webpack application as an example/playground
 https://github.com/a306916069/vue-lunar-fullcalendar
 
 ## Basic Usage
