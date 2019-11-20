@@ -12,7 +12,6 @@ Increase the functions of Chinese lunar calendar, 24 solar terms and holidays
 
 [Simple Live Demo](https://a306916069.github.io/vue-lunar-fullcalendar)
 ![Image text](https://raw.githubusercontent.com/a306916069/vue-lunar-fullcalendar/master/src/assets/img/lunar.png)
-![Image text](https://upload-images.jianshu.io/upload_images/9978622-243c5d026d53953a.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp)
 
 ## Installation
 
@@ -69,7 +68,6 @@ Control whether the Chinese calendar shows true.
 ```
 
 ![Image text](https://raw.githubusercontent.com/a306916069/vue-lunar-fullcalendar/master/src/assets/img/window.lunar.png)
-![Image text](https://upload-images.jianshu.io/upload_images/9978622-89ee65744e9cf2f6.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp)
 
 ## API document
 
