@@ -1,4 +1,4 @@
-## vue-lunar-full-calendar
+## [vue-lunar-full-calendar](https://a306916069.github.io/vue-lunar-fullcalendar)
 
 [![NPM version](https://img.shields.io/badge/npm-v1.3.0-green.svg)](https://www.npmjs.com/package/vue-lunar-full-calendar)
 [![NPM downloads](https://img.shields.io/badge/downloads-vue--lunar--full--calendar-green.svg)](https://www.npmjs.com/package/vue-lunar-full-calendar)
@@ -11,7 +11,7 @@ Increase the functions of Chinese lunar calendar, 24 solar terms and holidays
 ```
 
 [Simple Live Demo](https://a306916069.github.io/vue-lunar-fullcalendar)
-![Image text](https://raw.githubusercontent.com/a306916069/vue-lunar-fullcalendar/master/src/assets/img/lunar.png)[.](https://a306916069.github.io/vue-lunar-fullcalendar)
+![Image text](https://raw.githubusercontent.com/a306916069/vue-lunar-fullcalendar/master/src/assets/img/lunar.png)
 
 ## Installation
 
