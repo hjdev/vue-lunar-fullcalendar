@@ -28,7 +28,7 @@
     "24节气"
   ],
   "dependencies": {
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "lodash.defaultsdeep": "^4.6.1",
     "moment": "^2.22.2"
   },
