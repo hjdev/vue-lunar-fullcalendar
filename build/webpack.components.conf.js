@@ -11,7 +11,7 @@ const version = process.env.VERSION || require('../package.json').version
 
 let banner =
   'vue-lunar-fullcalendar v' + version + '\n' +
-  '(c) ' + new Date().getFullYear() + ' h j <https://5263954.github.io> \n' +
+  '(c) ' + new Date().getFullYear() + ' h j <https://hjdev.github.io> \n' +
   '@license MIT'
 
 module.exports = {
