@@ -1,6 +1,6 @@
 ## [vue-lunar-full-calendar](https://hjdev.github.io/vue-lunar-fullcalendar)
 
-[![NPM version](https://img.shields.io/badge/npm-v1.3.0-green.svg)](https://www.npmjs.com/package/vue-lunar-full-calendar)
+[![NPM version](https://img.shields.io/badge/npm-v1.3.2-green.svg)](https://www.npmjs.com/package/vue-lunar-full-calendar)
 [![NPM downloads](https://img.shields.io/badge/downloads-vue--lunar--full--calendar-green.svg)](https://www.npmjs.com/package/vue-lunar-full-calendar)
 
 ## Image and demo
